@@ -1,0 +1,2 @@
+2018-10-31:16:17:26 The install was a success
+2018-10-31:16:18:16 Not enought CPUs to install

@@ -12,3 +12,11 @@ if [ $1 -gt  $cnt  ]; then
 else
 	echo "instal started"
 fi
+
+echo "enter the instalation outcome"
+
+currentDate=$(date '+%Y-%m-%d:%H:%M:%S')
+read entry
+
+echo $currentDate $entry >> InstallTine.txt
+
