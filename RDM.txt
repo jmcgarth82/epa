@@ -1,0 +1,43 @@
+#!/bin/bash
+
+MyDate=`date '+%Y-%m-%d'`
+
+MyTime=`date '+%H:%M:%S'`
+
+MyCPU=`grep processor /proc/cpuinfo | wc -l`
+
+MySQL=`grep mysql /etc/passwd | wc -l`
+echo 
+echo "DATE: $MyDate" 
+echo "TIME: $MyTime" 
+echo 
+echo $Line1 
+echo $Line2 
+echo $Line3 
+echo "-------------------------------------------------------------------"
+if [ $MySQL -gt 0 ]
+then
+       Line1="OK: the user account mysql is present on this VM"
+else
+       Line1="ERROR: the user account mysql is not present on this VM"
+fi
+
+if [ $MyCPU -ge 2 ]
+then
+        Line2="OK: the number of CPUs on this VM is greater than or equal to 2"
+else
+        Line2="ERROR: The number of CPUs on this VM is less than 2"
+fi
+
+if [ -x /usr/bin/uptime ]
+then
+        Line3="OK: usr/bin/uptime does have execute permissions turned on"
+else
+        Line3="ERROR: usr/bin/uptime does not have usr/bin/uptime does"
+fi
+
+echo "-------------------------------------------------------------------" 
+echo "COMPLIANCE REPORT"
+echo 
+echo "DATE: $MyDate" 
+
