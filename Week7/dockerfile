@@ -1,0 +1,11 @@
+# we will use the latest fedora OS
+FROM ubuntu:latest
+
+# copy the script from this directory to the root
+COPY cpu_count.sh /
+
+# of course, chmod +x
+RUN chmod +x /cpu_count.sh
+
+# now run the scipt
+CMD ["/cpu_count.sh"]
