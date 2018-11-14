@@ -1,0 +1,11 @@
+# we will use the latest fedora OS
+FROM ubuntu:latest
+
+# copy the script from this directory to the root
+COPY mach_info.sh /
+
+# of course, chmod +x
+RUN chmod +x /mach_info.sh
+
+# now run the scipt
+CMD ["/mach_info.sh"]
