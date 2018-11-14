@@ -1,0 +1,11 @@
+# we will use the latest fedora OS
+FROM ubuntu:latest
+
+# copy the script from this directory to the root
+COPY proc_count.sh /
+
+# of course, chmod +x
+RUN chmod +x /proc_count.sh
+
+# now run the scipt
+CMD ["/proc_count.sh"]
